@@ -170,7 +170,7 @@ for middleware in app.config.get("ADDITIONAL_MIDDLEWARE"):
 class MyIndexView(IndexView):
     @expose("/")
     def index(self):
-        return redirect("/superset/welcome")
+        return redirect("/yamato")
 
 
 custom_sm = app.config.get("CUSTOM_SECURITY_MANAGER") or SupersetSecurityManager
