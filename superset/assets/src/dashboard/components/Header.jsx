@@ -391,41 +391,45 @@ class Header extends React.PureComponent {
             </div>
           )}
 
-          {!editMode && !hasUnsavedChanges && (
+          {!editMode && !hasUnsavedChanges && userCanEdit && (
             <Button
               bsSize="small"
               onClick={this.toggleEditMode}
               bsStyle={popButton ? 'primary' : undefined}
-              disabled={!userCanEdit}
             >
               {t('Edit dashboard')}
             </Button>
           )}
 
-          <HeaderActionsDropdown
-            addSuccessToast={this.props.addSuccessToast}
-            addDangerToast={this.props.addDangerToast}
-            dashboardId={dashboardInfo.id}
-            dashboardTitle={dashboardTitle}
-            layout={layout}
-            filters={filters}
-            expandedSlices={expandedSlices}
-            css={css}
-            colorNamespace={colorNamespace}
-            colorScheme={colorScheme}
-            onSave={onSave}
-            onChange={onChange}
-            forceRefreshAllCharts={this.forceRefresh}
-            startPeriodicRender={this.startPeriodicRender}
-            refreshFrequency={refreshFrequency}
-            setRefreshFrequency={setRefreshFrequency}
-            updateCss={updateCss}
-            editMode={editMode}
-            hasUnsavedChanges={hasUnsavedChanges}
-            userCanEdit={userCanEdit}
-            userCanSave={userCanSaveAs}
-            isLoading={isLoading}
-          />
+          {
+            userCanEdit && (
+              <HeaderActionsDropdown
+                addSuccessToast={this.props.addSuccessToast}
+                addDangerToast={this.props.addDangerToast}
+                dashboardId={dashboardInfo.id}
+                dashboardTitle={dashboardTitle}
+                layout={layout}
+                filters={filters}
+                expandedSlices={expandedSlices}
+                css={css}
+                colorNamespace={colorNamespace}
+                colorScheme={colorScheme}
+                onSave={onSave}
+                onChange={onChange}
+                forceRefreshAllCharts={this.forceRefresh}
+                startPeriodicRender={this.startPeriodicRender}
+                refreshFrequency={refreshFrequency}
+                setRefreshFrequency={setRefreshFrequency}
+                updateCss={updateCss}
+                editMode={editMode}
+                hasUnsavedChanges={hasUnsavedChanges}
+                userCanEdit={userCanEdit}
+                userCanSave={userCanSaveAs}
+                isLoading={isLoading}
+              />
+            )
+          }
+
         </div>
       </div>
     );

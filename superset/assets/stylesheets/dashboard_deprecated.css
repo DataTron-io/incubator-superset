@@ -197,3 +197,7 @@ i.danger {
 i.warning {
   color: orange;
 }
+
+.dashboard-header .publish {
+    display: none;
+}

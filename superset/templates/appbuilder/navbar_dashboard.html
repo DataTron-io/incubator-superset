@@ -24,32 +24,39 @@
     {% set locale = 'en' %}
 {% endif %}
 
-{% if current_user.is_anonymous %}
-    <li class="dropdown">
-        <a
-            tabindex="-1"
-            href="/superset/dashboard/overview/"
-            title="Report a bug"
-        >
-            Overview
-        </a>
-    </li>
-    <li class="dropdown">
-        <a
-            tabindex="-1"
-            href="/superset/dashboard/tabbed_dash/"
-            title="Report a bug"
-        >
-            Contract Rate
-        </a>
-    </li>
-    <li class="dropdown">
-        <a
-            tabindex="-1"
-            href="/superset/dashboard/misc_charts/"
-            title="Report a bug"
-        >
-            Consolidation
-        </a>
-    </li>
-{% endif %}
+<li class="dropdown">
+    <a
+        tabindex="-1"
+        href="/yamato/overview"
+        title="overview"
+    >
+        Overview
+    </a>
+</li>
+<li class="dropdown">
+    <a
+        tabindex="-1"
+        href="/yamato/contract"
+        title="contract rate"
+    >
+        Contract Rate
+    </a>
+</li>
+<li class="dropdown">
+    <a
+        tabindex="-1"
+        href="/yamato/consolidation"
+        title="consolidation"
+    >
+        Consolidation
+    </a>
+</li>
+<li class="dropdown">
+    <a
+        tabindex="-1"
+        href="/superset/dashboard/overview"
+        title="consolidation"
+    >
+        Dashboard
+    </a>
+</li>

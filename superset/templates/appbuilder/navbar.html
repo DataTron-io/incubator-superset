@@ -41,6 +41,9 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        {% include 'appbuilder/navbar_dashboard.html' %}
+      </ul>
+      <ul class="nav navbar-nav">
         {% if WARNING_MSG %}
           <li class="alert alert-danger">
             {{ WARNING_MSG | safe }}
@@ -48,9 +51,7 @@
         {% endif %}
         {% include 'appbuilder/navbar_menu.html' %}
       </ul>
-      <ul class="nav navbar-nav">
-        {% include 'appbuilder/navbar_dashboard.html' %}
-      </ul>
+
       <ul class="nav navbar-nav navbar-right">
         {% include 'appbuilder/navbar_right.html' %}
       </ul>
